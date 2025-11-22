@@ -59,7 +59,7 @@ PRIMARY KEY(SupplierTelephone)  ,
       ON UPDATE NO ACTION);
 
 
-CREATE INDEX Table_09_FKIndex1 ON SupplierTelephones (Supplier_idSupplier);
+CREATE INDEX idx_supplier_telephones_supplier_id ON SupplierTelephones (Supplier_idSupplier);
 
 
 
@@ -73,7 +73,7 @@ PRIMARY KEY(BuyerPhoneNumber)  ,
       ON UPDATE NO ACTION);
 
 
-CREATE INDEX Table_10_FKIndex1 ON BuyerTelephones (Buyer_idBuyer);
+CREATE INDEX idx_buyer_telephones_supplier_id ON BuyerTelephones (Buyer_idBuyer);
 
 
 
@@ -101,9 +101,9 @@ PRIMARY KEY(idSupply)      ,
       ON UPDATE NO ACTION);
 
 
-CREATE INDEX Order_3_FKIndex1 ON Supply (Product_idProduct);
-CREATE INDEX Order_3_FKIndex2 ON Supply (Supplier_idSupplier);
-CREATE INDEX Supply_FKIndex3 ON Supply (Employee_idEmployee);
+CREATE INDEX idx_supply_product_id ON Supply (Product_idProduct);
+CREATE INDEX idx_supply_supplier_id ON Supply (Supplier_idSupplier);
+CREATE INDEX idx_supply_employee_id ON Supply (Employee_idEmployee);
 
 
 
@@ -131,9 +131,9 @@ PRIMARY KEY(idSale)      ,
       ON UPDATE NO ACTION);
 
 
-CREATE INDEX Sale_FKIndex1 ON Sale (Buyer_idBuyer);
-CREATE INDEX Sale_FKIndex2 ON Sale (Product_idProduct);
-CREATE INDEX Sale_FKIndex3 ON Sale (Employee_idEmployee);
+CREATE INDEX idx_sale_buyer_id ON Sale (Buyer_idBuyer);
+CREATE INDEX idx_sale_product_id ON Sale (Product_idProduct);
+CREATE INDEX idx_sale_employee_id ON Sale (Employee_idEmployee);
 
 
 
